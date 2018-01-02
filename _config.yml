@@ -1,39 +1,26 @@
-# Jekyll configuration
-
-name: Cs.Zhang
-description: blog
-
-# url is currently only used only for the RSS feed in feed.xml
-url: https://captorr.github.io
-
-# baseurl will often be '', but for a project page on gh-pages, it needs to
-# be the project name.
-# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
-#     run it like so: jekyll serve --baseurl=''
-baseurl: ''
-
-# This can be '' to hide the Github nav button
-github: ''
-
-# Set this to your UA-# value, or '' to disable the block completely
-gaaccount: ''
-
-# The 'comments' setting enables comments. You'll need to select either
-# disqus or isso below to choose a comment system. Individual posts can
-# override 'comments' to disable on a post-by-post basis.
-comments: true
-
-# Set this to your public isso URL to enable comments via isso. Set to '' to disable isso.
-isso: ''
-
-# Set this to your disqus shortname to enable comments via disqus. Set to '' to disable disqus.
-disqus: ''
-
-permalink: /:year/:month/:title
-paginate: 3
-
+# Site settings
+name: CapTor的博客
+email: zhangchengsheng1@qq.com
+author: CapTor
+url: http://captorr.github.io
+resume_site: http://captorr.github.io
+github: https://github.com/captorr
+baseurl: ""  #根目录
+description: Tomorrow is another day.
+motto: I want something just like this.
+banner: 要么躺下睡，要么起来嗨
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+excerpt_separator:  '<!-- more -->' #文章摘要
+paginate: 8
+paginate_path: "page:num"
+gems: [jekyll-paginate]
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+github_username: captorr
 highlighter: rouge
 markdown: kramdown
-gems: ['jekyll-paginate']
-
-exclude: ['README.md', 'LICENSE']
+FB:
+  comments :
+    provider : disqus
+    disqus :
+        short_name : captorr

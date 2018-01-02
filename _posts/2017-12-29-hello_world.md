@@ -2,7 +2,8 @@
 layout: post
 title: "HELLO WORLD"
 date: 2017.12.29 16:11
-comments: true
+categories: 随笔
+tag: blog
 ---
 
 ## <font color="#3399FF">Hello World!</font>

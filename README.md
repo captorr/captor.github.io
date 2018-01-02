@@ -1,8 +1,3 @@
-BLOG
-============
+# 关于这个Jekyll模板主题 ⚽⚽⚽
 
-* Fork from [jekvll-clean](https://github.com/scotte/jekyll-clean).
-============
-
-Start form 2017.12.29
-
+forked from [maoxiaoke](https://github.com/maoxiaoke/maoxiaoke.github.io)
