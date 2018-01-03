@@ -15,7 +15,7 @@ tag: tech
 
 Jekyll是Github上的一个开源项目，简单轻量，对文本的处理非常灵活友好，并且提供了傻瓜打包式的安装搭建教程，加上无数中文贡献者的无私答疑建设，模板QA之类的多到看不过来，总之十分适合 <font color="#FF3300"><del>零基础or懒or真的就是笨</del></font> 愿意折腾的geeker<font color="#3399FF">们</font>拿来用作个人博客的框架。
 
-Jekyll同时也是Github Pages的引擎之一，可以直接在Github上通过建repository的方式变出一个博客网页，通过push代码的方式更新博客，简直方便。<font size=2>当然，这个方便是Github Pages的方便，换个框架也可以变出个网页。</font>
+Jekyll同时也是Github Pages的引擎之一，可以直接在Github上通过建repository的方式变出一个博客网页，通过push代码的方式更新博客，简直方便。当然，这个方便是Github Pages的方便，换个框架也可以变出个网页。
 
 + Jekyll项目Github地址: [https://github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
 
