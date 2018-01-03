@@ -25,7 +25,7 @@ Jekyll同时也是Github Pages的引擎之一，可以直接在Github上通过�
 
 ## 我都干了啥
 
-<font color="#FF3300">去年</font>fork了这个简单版的框架： [Jekyll Clean](https://github.com/scotte/jekyll-clean) ，[博客地址](https://github.com/scotte/jekyll-clean)
+去年fork了这个简单版的框架： [Jekyll Clean](https://github.com/scotte/jekyll-clean) ，[博客地址](https://github.com/scotte/jekyll-clean)
 
 今年fork了这个强化版的框架： [maoxiaoke.github.io](https://github.com/maoxiaoke/maoxiaoke.github.io)，[博客地址](http://xiaokedada.com/)
 
