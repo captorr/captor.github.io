@@ -54,6 +54,8 @@ tag: scripts
 + piece_base_height_1_2 = 26
 + piece_body_width = 110
 
+我的手机型号是： 华为P10 PLUS, 屏幕分辨率：1440*2560  <!--2018.01.22修改-->
+
 win7 and win10下都已经测试过了，可以完美运行。
 
 ## 开始玩吧
