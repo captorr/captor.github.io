@@ -7,8 +7,8 @@ resume_site: https://captorr.github.io
 github: https://github.com/captorr
 baseurl: ""  #根目录
 description: Tomorrow is another day.
-motto: I want something just like this.
-banner: 要么躺下睡，要么起来嗨
+motto: 不积跬步无以至千里
+banner: 空乏其身行，拂乱其所为
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
 excerpt_separator:  '<!-- more -->' #文章摘要
