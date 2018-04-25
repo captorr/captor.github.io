@@ -57,7 +57,9 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 * rg\_added\_sorted.bam
 
-` java -jar picard.jar MarkDuplicates I=rg_added_sorted.bam O=dedupped.bam CREATE_INDEX=true VALIDATION_STRINGENCY=SILENT M=output.metrics `
+` java -jar picard.jar MarkDuplicates I=rg_added_sorted.bam O=dedupped.bam CREATE_INDEX=true `
+
+` VALIDATION_STRINGENCY=SILENT M=output.metrics `
 
 这步生成3个文件：
 
