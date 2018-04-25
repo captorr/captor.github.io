@@ -92,7 +92,9 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 ## Variant calling
 
-`GATK4 HaplotypeCaller -R hg38.fa -I split.bam --dont-use-soft-clipped-bases true -stand-call-conf 20.0 -O output.vcf `
+` GATK4 HaplotypeCaller -R hg38.fa -I split.bam --dont-use-soft-clipped-bases true `
+
+` -stand-call-conf 20.0 -O output.vcf `
 
 生成2个文件：
 
@@ -108,7 +110,9 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 ` perl ./annovar/convert2annovar.pl -format vcf4 output.vcf > res.avinput `
 
-` perl ./annovar/table_annovar.pl res.avinput ./annovar/humandb/ -buildver hg38 -out res.note -protocol refGene -operation g `
+` perl ./annovar/table_annovar.pl res.avinput ./annovar/humandb/ -buildver hg38 -out res.note `
+
+` -protocol refGene -operation g `
 
 简单的注释就完成了。
 
