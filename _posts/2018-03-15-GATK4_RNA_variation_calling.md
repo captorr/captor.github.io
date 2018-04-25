@@ -32,11 +32,13 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 得到的结果中有一个'SJ.out.tab'文件，加进参考基因组重新做一下INDEX。
 
 ` STAR --runMode genomeGenerate --genomeDir 'genome_dir_path_new' --genomeFastaFiles hg38.fa `
+
 ` --sjdbFileChrStartEnd 'SJ.out.tab' --sjdbOverhang 75 --runThreadN <int> `
 
 第二次比对
 
 ` cd 'run_dir_path_new' `
+
 ` STAR --genomeDir 'genome_dir_path_new' --readFilesIn fq_1.fq fq_2.fq --runThreadN <int> `
 
 生成.SAM文件，下面要用。
@@ -48,6 +50,7 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 不过老爷车上装了picard，就这么废弃了多可惜，我决定用原版的picard。
 
 ` java -jar picard.jar AddOrReplaceReadGroups I=STAR_output.sam O=rg_added_sorted.bam SO=coordinate ` 
+
 ` RGID=id RGLB=library RGPL=platform RGPU=machine RGSM=sample `
 
 这步生成1个文件：
