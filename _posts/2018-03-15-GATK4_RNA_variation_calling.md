@@ -35,7 +35,7 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 第二次比对
 	
-	` cd 'run_dir_path_new' 
+	cd 'run_dir_path_new' 
 
 	STAR --genomeDir 'genome_dir_path_new' --readFilesIn fq_1.fq fq_2.fq --runThreadN <int> 
 
