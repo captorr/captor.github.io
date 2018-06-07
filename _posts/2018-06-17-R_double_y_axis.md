@@ -21,7 +21,7 @@ trans是一个转换公式，用来将双轴的值域统一，~.后可接公式�
 
 举个实际代码的例子：
 
-	`+scale_y_continuous(name='',breaks=lable.site1,label=names(lable.site1),sec.axis=sec_axis(~.*1,breaks=lable.site2,labels=names(lable.site2)))`
+	\+scale_y_continuous(name='',breaks=lable.site1,label=names(lable.site1),sec.axis=sec_axis(~.*1,breaks=lable.site2,labels=names(lable.site2)))
 
 
 之后还会遇到一个问题，如何分别调整双轴轴标签、刻度标签的属性？
@@ -30,7 +30,7 @@ trans是一个转换公式，用来将双轴的值域统一，~.后可接公式�
 
 举个实际的例子：
 
-	`+theme(axis.text.y=element_text(size=rel(0.85)),axis.text.y.right=element_text(size=rel(1.3)))`
+	\+theme(axis.text.y=element_text(size=rel(0.85)),axis.text.y.right=element_text(size=rel(1.3)))
 
 以上代码将主轴刻度标签调整为0.85倍主题大小，副轴调整为1.3倍主题大小。
 
