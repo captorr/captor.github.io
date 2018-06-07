@@ -21,25 +21,23 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 先建个STAR需要的参考基因组INDEX
 
-` STAR --runMode genomeGenerate --genomeDir 'genome_dir_path' --genomeFastaFiles hg38.fa --runThreadN <int> `
+	STAR --runMode genomeGenerate --genomeDir 'genome_dir_path' --genomeFastaFiles hg38.fa --runThreadN <int>
 
-` cd 'run_dir_path' `
+	cd 'run_dir_path' `
 
 第一次比对
 
-` STAR --genomeDir 'genome_dir_path' --readFilesIn fq_1.fq fq_2.fq --runThreadN <int> `
+	STAR --genomeDir 'genome_dir_path' --readFilesIn fq_1.fq fq_2.fq --runThreadN <int> 
 
 得到的结果中有一个'SJ.out.tab'文件，加进参考基因组重新做一下INDEX。
 
-` STAR --runMode genomeGenerate --genomeDir 'genome_dir_path_new' --genomeFastaFiles hg38.fa `
-
-` --sjdbFileChrStartEnd 'SJ.out.tab' --sjdbOverhang 75 --runThreadN <int> `
+	STAR --runMode genomeGenerate --genomeDir 'genome_dir_path_new' --genomeFastaFiles hg38.fa --sjdbFileChrStartEnd 'SJ.out.tab' --sjdbOverhang 75 --runThreadN <int>
 
 第二次比对
+	
+	` cd 'run_dir_path_new' 
 
-` cd 'run_dir_path_new' `
-
-` STAR --genomeDir 'genome_dir_path_new' --readFilesIn fq_1.fq fq_2.fq --runThreadN <int> `
+	STAR --genomeDir 'genome_dir_path_new' --readFilesIn fq_1.fq fq_2.fq --runThreadN <int> 
 
 生成.SAM文件，下面要用。
 
@@ -49,17 +47,17 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 不过老爷车上装了picard，就这么废弃了多可惜，我决定用原版的picard。
 
-` java -jar picard.jar AddOrReplaceReadGroups I=STAR_output.sam O=rg_added_sorted.bam SO=coordinate ` 
+	java -jar picard.jar AddOrReplaceReadGroups I=STAR_output.sam O=rg_added_sorted.bam SO=coordinate
 
-` RGID=id RGLB=library RGPL=platform RGPU=machine RGSM=sample `
+	RGID=id RGLB=library RGPL=platform RGPU=machine RGSM=sample
 
 这步生成1个文件：
 
 * rg\_added\_sorted.bam
 
-` java -jar picard.jar MarkDuplicates I=rg_added_sorted.bam O=dedupped.bam CREATE_INDEX=true `
+	java -jar picard.jar MarkDuplicates I=rg_added_sorted.bam O=dedupped.bam CREATE_INDEX=true
 
-` VALIDATION_STRINGENCY=SILENT M=output.metrics `
+	VALIDATION_STRINGENCY=SILENT M=output.metrics
 
 这步生成3个文件：
 
@@ -82,7 +80,7 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 好了~就当无事发生~可以直接用GATK了~
 
-` GATK4 SplitNCigarReads -R hg38.fa -I dedupped.bam -O split.bam `
+	GATK4 SplitNCigarReads -R hg38.fa -I dedupped.bam -O split.bam
 
 生成2个文件：
 
@@ -92,9 +90,7 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 ## Variant calling
 
-` GATK4 HaplotypeCaller -R hg38.fa -I split.bam --dont-use-soft-clipped-bases true `
-
-` -stand-call-conf 20.0 -O output.vcf `
+	GATK4 HaplotypeCaller -R hg38.fa -I split.bam --dont-use-soft-clipped-bases true -stand-call-conf 20.0 -O output.vcf 
 
 生成2个文件：
 
@@ -108,11 +104,9 @@ GATK 3.x版本和GATK4有差别，做了部分修改。
 
 后续可以配合Annovar软件对VCF结果文件做注释，大概是这两下。
 
-` perl ./annovar/convert2annovar.pl -format vcf4 output.vcf > res.avinput `
+	perl ./annovar/convert2annovar.pl -format vcf4 output.vcf > res.avinput 
 
-` perl ./annovar/table_annovar.pl res.avinput ./annovar/humandb/ -buildver hg38 -out res.note `
-
-` -protocol refGene -operation g `
+	perl ./annovar/table_annovar.pl res.avinput ./annovar/humandb/ -buildver hg38 -out res.note -protocol refGene -operation g
 
 简单的注释就完成了。
 
