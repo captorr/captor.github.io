@@ -1699,7 +1699,8 @@ to{transform:translateY(0) scale(1);opacity:1}
 .highlight .bp{color:#007020}
 .highlight .vc,.highlight .vg,.highlight .vi{color:#bb60d5}
 .highlight .il{color:#40a070}
-.highlighter-rouge{color:#22222}
+.highlighter-rouge{color:#222222}
+.highlighter-rouge{background-color:#eee}
 .highlighter-rouge .highlight .hll{background-color:#eee}
 .highlighter-rouge .highlight{background:#eee}
 .highlighter-rouge .highlight .c{color:#228B22}
